@@ -1,17 +1,91 @@
 //Intialize Variables
+var pick = [];
 var Space = [];
 var counter = 6;
 var wrong = [];
 var x;
 var generate;
 var y = "";
+var mu = 1;
 //Make Array of Words
-var medium = ["laptop","sunset","raven","spiderman","wolf","person","hero","couch","iphone","house","fantastic","respect","banana","watermelon","vegetable","carpet","telephone","transformers","bumblebee","injustice"]; 
-var easy = ["hey","dog","cat","fox","lion","bird","bye","one","two","four"];
+var hard = ["dinosaur","pineapple","coconut","telegram","beaver","tarantula","motorcycle","mountain","gorilla","unicyle","desert","giraffe","apartment","trampoliine","extraordinary","trillion","billionaire","lizard","detective","automobile"]
+var medium = ["laptop","sunset","raven","sleep","wolf","person","hero","mother","flower","house","fantastic","respect","scooter","watermelon","vegetable","carpet","telephone","father","bumblebee","injustice"]; 
+var easy = ["hey","dog","dad","fox","lion","bird","bye","one","two","four","ball","cup","food","candy","bark","car","bike","walk","bus","mom"];
+//Choose a difficulty
+function Music1(){
+	if(mu == 1){
+		document.getElementById('1Song').play();
+		document.getElementById('Song1').style.color = "blue";
+		document.getElementById('3Song').pause();
+		document.getElementById('Song3').style.color = "purple";
+		document.getElementById('2Song').pause();
+		document.getElementById('Song2').style.color = "purple";
+		mu = 2;
+		return;
+	}else if(mu == 2){
+		document.getElementById('1Song').pause();
+		document.getElementById('Song1').style.color = "brown";
+		mu = 1;
+		return;
+	}
+}
+function Music2(){
+	if(mu == 1){
+		document.getElementById('2Song').play();
+		document.getElementById('Song2').style.color = "blue";
+		document.getElementById('3Song').pause();
+		document.getElementById('Song3').style.color = "purple";
+		document.getElementById('1Song').pause();
+		document.getElementById('Song1').style.color = "purple";
+		mu = 2;
+		return;
+	}else if(mu == 2){
+		document.getElementById('2Song').pause();
+		document.getElementById('Song2').style.color = "brown";
+		mu = 1;
+		return;
+	}
+}
+function Music3(){
+	if(mu == 1){
+		document.getElementById('3Song').play();
+		document.getElementById('Song3').style.color = "blue";
+		document.getElementById('1Song').pause();
+		document.getElementById('Song1').style.color = "purple";
+		document.getElementById('2Song').pause();
+		document.getElementById('Song2').style.color = "purple";
+		mu = 2;
+		return;
+	}else if(mu == 2){
+		document.getElementById('3Song').pause();
+		document.getElementById('Song3').style.color = "brown";
+		mu = 1;
+		return;
+	}
+}
+function Easy(){
+	pick = easy;
+	generate();
+	document.getElementById('dd').innerHTML = "";
+	document.getElementById('easy').style.color = "blue";
+}
+function Medium(){
+	pick = medium;
+	generate();
+	document.getElementById('dd').innerHTML = "";
+		document.getElementById('medium').style.color = "blue";
+}
+function Hard(){
+	pick = hard;
+	generate();
+	document.getElementById('dd').innerHTML = "";
+		document.getElementById('hard').style.color = "blue";
+}
 //Pick a randm word
-function generate(){
+function generate(){	
 x  = Math.floor(Math.random() * 20);
-generate = medium[x];
+generate = pick[x];
+//alert(pick);
 //Make an array the size of the length of the word
 for(var i = 0; i < generate.length; i++){
 	Space.push(i);
@@ -29,11 +103,9 @@ function check(e){
 		y = document.getElementById('letter').value;
 		//Checks to see if inbox matches word and if it doesnt it doesnt let u press enter
 		//if y inbox length is more than 1
-            if(y.length > 1 ){ 
-			if(y == generate){
-			}else
-			return false;
-		}
+           if(y.length == 2 ){ 
+		    return false;
+			}
 		//Checks to see if the letter typed is in the word
 if(generate.includes(y)){
 	for(var ii = 0; ii < generate.length; ii++){
@@ -73,6 +145,7 @@ else{
 }
 }
 }
+
 		}
 	}
      // doesnt let u pick the same wrong letter twice
@@ -87,12 +160,25 @@ else{
      document.getElementById('w').innerHTML = "";
      document.getElementById('w').innerHTML = wrong;
 counter--;
-
-document.getElementById('counter').innerHTML = counter + ' Strikes Left!!!';
+if(counter == 5){
+	document.getElementById('circle').style.backgroundColor = "red";
+}
+if(counter == 4){
+	document.getElementById('square').style.backgroundColor = "red";
+}
+if(counter == 3){
+	document.getElementById('arm').style.backgroundColor = "red";
+}
+if(counter == 2){
+	document.getElementById('arm2').style.backgroundColor = "red";
+}
 if(counter == 1){
-document.getElementById('counter').innerHTML = counter + ' Strike Left!!!';
-}//Lets u know u lost
+	document.getElementById('leg').style.backgroundColor = "red";
+}
 if(counter == 0){
+	document.getElementById('leg2').style.backgroundColor = "red";
+
+//Lets u know u lost
 document.getElementById('counter').innerHTML = "You Lose!";
 if(generate.length < 8 && generate.length !== 7 ){
 document.getElementById('spaces').innerHTML = "Try Again Loser";	
