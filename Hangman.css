@@ -157,29 +157,29 @@ a:hover{
 }
 #Song1{
 	color:brown;
-	position:absolute;
-	bottom:50%;
-	right:5%;
 }
 #Song1:hover{
 	color:blue;
 }
 #Song2{
 	color:brown;
-	position:absolute;
-	bottom:43%;
-	right:5%;
 }
 #Song2:hover{
 	color:blue;
 }
 #Song3{
 	color:brown;
-	position:absolute;
-	bottom:36%;
-	right:5%;
 }
 #Song3:hover{
 	color:blue;
 }
-
+#mlist{
+	border: red solid 5px;
+	position:absolute;
+	top:55%;
+	right:2%;
+	padding:10px;
+}
+#stop:hover{
+	color:blue;
+}

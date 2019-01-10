@@ -13,56 +13,43 @@ var medium = ["laptop","sunset","raven","sleep","wolf","person","hero","mother",
 var easy = ["hey","dog","dad","fox","lion","bird","bye","one","two","four","ball","cup","food","candy","bark","car","bike","walk","bus","mom"];
 //Choose a difficulty
 function Music1(){
-	if(mu == 1){
 		document.getElementById('1Song').play();
 		document.getElementById('Song1').style.color = "blue";
 		document.getElementById('3Song').pause();
 		document.getElementById('Song3').style.color = "purple";
 		document.getElementById('2Song').pause();
 		document.getElementById('Song2').style.color = "purple";
-		mu = 2;
-		return;
-	}else if(mu == 2){
-		document.getElementById('1Song').pause();
-		document.getElementById('Song1').style.color = "brown";
-		mu = 1;
-		return;
-	}
+		document.getElementById('stop').style.color = "brown"
 }
 function Music2(){
-	if(mu == 1){
 		document.getElementById('2Song').play();
 		document.getElementById('Song2').style.color = "blue";
 		document.getElementById('3Song').pause();
 		document.getElementById('Song3').style.color = "purple";
 		document.getElementById('1Song').pause();
 		document.getElementById('Song1').style.color = "purple";
-		mu = 2;
-		return;
-	}else if(mu == 2){
-		document.getElementById('2Song').pause();
-		document.getElementById('Song2').style.color = "brown";
-		mu = 1;
-		return;
-	}
+		document.getElementById('stop').style.color = "brown"
+	
 }
 function Music3(){
-	if(mu == 1){
 		document.getElementById('3Song').play();
 		document.getElementById('Song3').style.color = "blue";
 		document.getElementById('1Song').pause();
 		document.getElementById('Song1').style.color = "purple";
 		document.getElementById('2Song').pause();
 		document.getElementById('Song2').style.color = "purple";
-		mu = 2;
-		return;
-	}else if(mu == 2){
+		document.getElementById('stop').style.color = "brown"
+		
+	}function Nomusic(){
+		document.getElementById('1Song').pause();
+		document.getElementById('Song1').style.color = "brown";
+		document.getElementById('2Song').pause();
+		document.getElementById('Song2').style.color = "brown";
 		document.getElementById('3Song').pause();
 		document.getElementById('Song3').style.color = "brown";
-		mu = 1;
-		return;
+		document.getElementById('stop').style.color = "blue"
 	}
-}
+
 function Easy(){
 	pick = easy;
 	generate();
