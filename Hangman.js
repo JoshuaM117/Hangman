@@ -8,7 +8,7 @@ var generate;
 var y = "";
 var mu = 1;
 //Make Array of Words
-var hard = ["dinosaur","pineapple","coconut","telegram","beaver","tarantula","motorcycle","mountain","gorilla","unicyle","desert","giraffe","apartment","trampoliine","extraordinary","trillion","billionaire","lizard","detective","automobile"]
+var hard = ["dinosaur","pineapple","coconut","telegram","beaver","tarantula","motorcycle","mountain","gorilla","unicycle","desert","giraffe","apartment","trampoliine","extraordinary","trillion","billionaire","lizard","detective","automobile"]
 var medium = ["laptop","sunset","raven","sleep","wolf","person","hero","mother","flower","house","fantastic","respect","scooter","watermelon","vegetable","carpet","telephone","father","bumblebee","injustice"]; 
 var easy = ["hey","dog","dad","fox","lion","bird","bye","one","two","four","ball","cup","food","candy","bark","car","bike","walk","bus","mom"];
 //Choose a difficulty
