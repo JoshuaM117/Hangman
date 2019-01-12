@@ -1,4 +1,10 @@
 //Intialize Variables
+var ccc = 1;
+var correc = new Audio('335908__littlerainyseasons__correct.mp3');
+var win = new Audio('162458__kastenfrosch__gewonnen2.mp3');
+var lose = new Audio('412427__florianreichelt__fail-sound-effect-accoustic-guitar.wav');
+var wron = new Audio('415764__thebuilder15__wrong.wav');
+var select = new Audio('198448__csharp279__menu-scroll-selection-sound.wav');
 var gl;
 var pick = [];
 var Space = [];
@@ -20,6 +26,8 @@ function Music1(){
 		document.getElementById('Song3').style.color = "purple";
 		document.getElementById('2Song').pause();
 		document.getElementById('Song2').style.color = "purple";
+		document.getElementById('4Song').pause();
+		document.getElementById('Song4').style.color = "purple";
 		document.getElementById('stop').style.color = "brown"
 }
 function Music2(){
@@ -29,6 +37,8 @@ function Music2(){
 		document.getElementById('Song3').style.color = "purple";
 		document.getElementById('1Song').pause();
 		document.getElementById('Song1').style.color = "purple";
+		document.getElementById('4Song').pause();
+		document.getElementById('Song4').style.color = "purple";
 		document.getElementById('stop').style.color = "brown"
 	
 }
@@ -39,15 +49,30 @@ function Music3(){
 		document.getElementById('Song1').style.color = "purple";
 		document.getElementById('2Song').pause();
 		document.getElementById('Song2').style.color = "purple";
+		document.getElementById('4Song').pause();
+		document.getElementById('Song4').style.color = "purple";
 		document.getElementById('stop').style.color = "brown"
 		
-	}function Nomusic(){
+	}function Music4(){
+		document.getElementById('4Song').play();
+		document.getElementById('Song4').style.color = "blue";
+		document.getElementById('1Song').pause();
+		document.getElementById('Song1').style.color = "purple";
+		document.getElementById('2Song').pause();
+		document.getElementById('Song2').style.color = "purple";
+		document.getElementById('3Song').pause();
+		document.getElementById('Song3').style.color = "purple";
+
+	}
+	function Nomusic(){
 		document.getElementById('1Song').pause();
 		document.getElementById('Song1').style.color = "brown";
 		document.getElementById('2Song').pause();
 		document.getElementById('Song2').style.color = "brown";
 		document.getElementById('3Song').pause();
 		document.getElementById('Song3').style.color = "brown";
+		document.getElementById('4Song').pause();
+		document.getElementById('Song4').style.color = "brown";
 		document.getElementById('stop').style.color = "blue"
 	}
 
@@ -56,27 +81,32 @@ function Easy(){
 	//generate();
 	document.getElementById('dd').innerHTML = "";
 	document.getElementById('easy').style.color = "blue";
-	document.getElementById('medium').style.color = "brown";
-	document.getElementById('hard').style.color = "brown";
+	document.getElementById('medium').style.color = "purple";
+	document.getElementById('hard').style.color = "purple";
+    select.play();
 }
 function Medium(){
 	pick = medium;
 	//generate();
 	document.getElementById('dd').innerHTML = "";
 		document.getElementById('medium').style.color = "blue";
-		document.getElementById('easy').style.color = "brown";
-	document.getElementById('hard').style.color = "brown";
+		document.getElementById('easy').style.color = "purple";
+	document.getElementById('hard').style.color = "purple";
+	select.play();
 }
 function Hard(){
 	pick = hard;
 	//generate();
 	document.getElementById('dd').innerHTML = "";
 		document.getElementById('hard').style.color = "blue";
-		document.getElementById('easy').style.color = "brown";
-	document.getElementById('medium').style.color = "brown";
+		document.getElementById('easy').style.color = "purple";
+	document.getElementById('medium').style.color = "purple";
+	select.play();
 }
 //Pick a randm word
 function generate1(){
+	correc.play();
+	correc. currentTime = 0;
 	 document.getElementById('w').innerHTML = "";
 	document.getElementById('circle').style.backgroundColor = "transparent";
 	document.getElementById('square').style.backgroundColor = "transparent";
@@ -118,6 +148,7 @@ function chec(e){
 		}
 		    else{
 			y = document.getElementById('letter').value;
+			//ccc = 1;
 		}
 		document.getElementById('letter').value = "";
 		//if(1=1){
@@ -135,6 +166,7 @@ if(gl.includes(y)){
 	c = gl;
 	document.getElementById('spaces').innerHTML = c;
 document.getElementById('counter').innerHTML= "You Won!"
+win.play();
 if(counter == 6){
 	document.getElementById('spaces').innerHTML = "Perfect!!!"
 }
@@ -163,6 +195,7 @@ var rr = c.replace(/\W+/g,"");
 if(rr == gl){
 	document.getElementById('spaces').innerHTML = c;
 document.getElementById('counter').innerHTML= "You Won!"
+win.play();
 	if(counter == 6){
 	document.getElementById('spaces').innerHTML = "Perfect!!!"
 }
@@ -180,17 +213,19 @@ else{
 }
 }
 }
-
 		}
+		
 	}
+
      // doesnt let u pick the same wrong letter twice
 	else{
 	 if(wrong.includes(y)){
 	 	return false;
 	 	//put all the wrong letters at bottom and subtracts 
 	 	//one from counter
-
-	 }else
+	 }
+     wron.currentTime = 0;
+	 wron.play();
      wrong.push(y);
      document.getElementById('w').innerHTML = "";
      document.getElementById('w').innerHTML = wrong;
@@ -199,13 +234,13 @@ if(counter == 5){
 	document.getElementById('circle').style.backgroundColor = "red";
 }
 if(counter == 4){
-	document.getElementById('square').style.backgroundColor = "red";
+	document.getElementById('square').style.backgroundColor = "black"
 }
 if(counter == 3){
-	document.getElementById('arm').style.backgroundColor = "red";
+	document.getElementById('arm').style.backgroundColor = "black";
 }
 if(counter == 2){
-	document.getElementById('arm2').style.backgroundColor = "red";
+	document.getElementById('arm2').style.backgroundColor = "black";
 }
 if(counter == 1){
 	document.getElementById('leg').style.backgroundColor = "red";
@@ -215,6 +250,7 @@ if(counter == 0){
 
 //Lets u know u lost
 document.getElementById('counter').innerHTML = "You Lose!";
+lose.play();
 if(gl.length < 8 && gl.length !== 7 && gl.length > 4){
 document.getElementById('spaces').innerHTML = "Try Again Loser!";	
 }else if(gl.length == 7 || gl.length == 9){

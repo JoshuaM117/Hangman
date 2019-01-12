@@ -60,7 +60,7 @@ button{
 } 
 #square{
 	position: absolute;
-	top:30%;
+	top:30.6%;
 	width:8px;
 	height:100px;
 	background-color:transparent;
@@ -150,7 +150,7 @@ color:blue;
 }
 #dd{
 	position:absolute;
-	top:3px;
+	top:7px;
 }
 a:hover{
 	color:red;
@@ -173,13 +173,29 @@ a:hover{
 #Song3:hover{
 	color:blue;
 }
+#Song4{
+	color:brown;
+}
+#Song4:hover{
+	color:blue;
+}
 #mlist{
 	border: red solid 5px;
 	position:absolute;
-	top:55%;
+	top:48%;
 	right:2%;
 	padding:10px;
 }
 #stop:hover{
 	color:blue;
+}
+#again:hover{
+	color:green;
+}
+#again:visited{
+	color:green;
+}
+label{
+	color:orange;
+	font-size:25px;
 }
