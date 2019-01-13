@@ -78,7 +78,6 @@ function Music3(){
 
 function Easy(){
 	pick = easy;
-	//generate();
 	document.getElementById('dd').innerHTML = "";
 	document.getElementById('easy').style.color = "blue";
 	document.getElementById('medium').style.color = "purple";
@@ -87,7 +86,6 @@ function Easy(){
 }
 function Medium(){
 	pick = medium;
-	//generate();
 	document.getElementById('dd').innerHTML = "";
 		document.getElementById('medium').style.color = "blue";
 		document.getElementById('easy').style.color = "purple";
@@ -96,7 +94,6 @@ function Medium(){
 }
 function Hard(){
 	pick = hard;
-	//generate();
 	document.getElementById('dd').innerHTML = "";
 		document.getElementById('hard').style.color = "blue";
 		document.getElementById('easy').style.color = "purple";
@@ -156,9 +153,9 @@ function chec(e){
 		//Checks to see if inbox matches word and if it doesnt it doesnt let u press enter
 		//if y inbox length is more than 1
 
-		}
-		//Checks to see if the letter typed is in the word
-
+		}//Checks to see if the letter typed is in the word
+ 
+	y = y.replace(/\s/g,"");
 if(gl.includes(y)){
 	//alert(gl);
 	for(var ii = 0; ii < gl.length; ii++){
